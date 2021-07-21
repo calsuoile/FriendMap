@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  button: {
+  buttonco: {
     backgroundColor: "#5C9A9A",
     color: "white",
     fontFamily: "Open Sans Condensed, sans-serif",
@@ -24,11 +24,11 @@ function ButtonConnexion(props) {
       <Link href="connexion">
         <Button
           aria-label="connexion"
-        //   variant="contained"
-        //   color="secondary"
+          variant="contained"
+          color="secondary"
           className={classes.buttonco}
         >
-          Connexion
+          Connection
         </Button>
       </Link>
     </div>
