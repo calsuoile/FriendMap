@@ -36,18 +36,21 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    width: 600,
-    height: "100vh",
+    justifyContent: "center",
+    width: "90%",
+    height: "120vh",
+    marginTop: 20,
+    margin: "auto"
   },
   contain: {
-    opacity: 0.5,
-    "&:hover": {
-      zIndex: 1,
-      opacity: 1,
-    },
+    // opacity: 0.5,
+    // "&:hover": {
+    //   zIndex: 1,
+    //   opacity: 1,
+    // },
   },
   paper2: {
-    margin: theme.spacing(10, 20),
+    margin: theme.spacing(5, 10),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -57,12 +60,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(237, 162, 116, 1)",
   },
   form: {
-    width: "80%",
+    // width: "80%",
     marginTop: "50px",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#5C9A9A",
+    backgroundColor: "primary",
     color: "white",
     fontFamily: "Open Sans Condensed, sans-serif",
     fontWeight: 400,
@@ -70,9 +73,10 @@ const useStyles = makeStyles((theme) => ({
   },
   names: {
     display: "flex",
+    size: "auto"
   },
   name: {
-    marginRight: "5%",
+    marginRight: "10%",
   },
   ok: {
     fontFamily: "Open Sans Condensed, sans-serif",
@@ -85,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "40px",
+    fontSize: "70px",
   },
   alert: {
     fontFamily: "Open Sans Condensed, sans-serif",
@@ -94,13 +98,13 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginTop: "5%",
-    color: "#006262",
+    color: "secondary",
     fontSize: "40px",
   },
   hr: {
     width: "50%",
     height: "3px",
-    backgroundColor: "#006262",
+    backgroundColor: "textfield",
     border: "none",
     marginTop: "5%",
     marginBottom: "10px",
@@ -135,7 +139,7 @@ export default function Register() {
     email: "",
     password: "",
   });
-  
+
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -147,7 +151,7 @@ export default function Register() {
       .validate({ ...form, [e.target.name]: e.target.value })
       .then(async () => {
         await axios.post(`${process.env.NEXT_PUBLIC_API_URL}users`, form);
-        router.push("/connection");
+        router.push("/");
         setOpen(true);
       })
       .catch((err) => setErrors(err.errors));
@@ -166,7 +170,7 @@ export default function Register() {
       <Grid
         item
         component={Paper}
-        elevation={6}
+        elevation={10}
         square
         className={classes.contain}
       >
@@ -266,7 +270,7 @@ export default function Register() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              color="secondary"
               className={classes.submit}
             >
               Register
@@ -284,7 +288,7 @@ export default function Register() {
                   id="alert-dialog-description"
                   className={classes.alert}
                 >
-                  Login to continue 
+                  Login to continue
                 </DialogContentText>
               </DialogContent>
               <DialogActions>

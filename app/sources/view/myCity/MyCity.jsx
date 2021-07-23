@@ -3,13 +3,24 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button, Input } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
-  root : {
-    display: "flex",
-    justifyContent: "center"
+  root: {
+    margin: 40,
   },
-    title: {
-        color: "primary",
-    },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    color: "primary",
+    marginBottom: 30
+  },
+  input: {
+    display: "flex",
+    justifyContent: "center",
+    zIndex: 0,
+  },
+  buttonedition: {
+    display: "flex",
+    alignItems: "center",
+  },
 }));
 
 function MyCity(props) {
@@ -20,6 +31,10 @@ function MyCity(props) {
 
   const [edition, setEdition] = useState(false);
 
+  // const postForm = () => {
+  //   setForm();
+  // }
+
   const handleChangeEdit = (e) => {
     setForm((oldValues) => ({ ...oldValues, [e.target.name]: e.target.value }));
   };
@@ -28,8 +43,9 @@ function MyCity(props) {
     setForm({ city: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleClick = (e) => {
     console.log(form);
+    setForm({ city: e.target.value });
   };
 
   const handleEdition = () => {
@@ -38,7 +54,7 @@ function MyCity(props) {
 
   return (
     <div className={classes.root}>
-      <h3 className={classes.title}>My City: {form.city}</h3>
+      <h3 className={classes.title}>My City: {form.city} </h3>
       {!edition ? (
         <div className={classes.input}>
           <Input
@@ -48,7 +64,9 @@ function MyCity(props) {
             name="city"
             onChange={handleChange}
           ></Input>
-          <Button onClick={handleSubmit} variant="contained">Submit</Button>
+          <Button onClick={handleClick} >
+            Submit
+          </Button>
         </div>
       ) : (
         <div className={classes.edition}>
@@ -60,12 +78,18 @@ function MyCity(props) {
             value={form.city}
             onChange={handleChangeEdit}
           ></Input>
-          <Button onClick={handleSubmit} variant="contained">Submit</Button>
+          <Button onClick={handleClick} variant="contained">
+            Submit
+          </Button>
         </div>
       )}
-      <Button className={classes.buttonedition} onClick={handleEdition} variant="contained">
+      {/* <Button
+        className={classes.buttonedition}
+        onClick={handleEdition}
+        variant="contained"
+      >
         Edit
-      </Button>
+      </Button> */}
     </div>
   );
 }

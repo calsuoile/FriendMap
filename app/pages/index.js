@@ -11,13 +11,13 @@ const useStyles = makeStyles({
     flexDirection: "column",
     margin: "auto",
     backgroundColor: "#63252c !important",
+    width: "100%"
   },
   image : {
     marginTop: 90,
     marginBottom: 30,
-    width: 550,
-    marginLeft: 20,
-    marginRight: 20,
+    width: "80%",
+    margin: "auto"
   },
 })
 

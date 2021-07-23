@@ -9,14 +9,14 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import axios from "axios";
+// import axios from "axios";
 import { useRouter } from "next/router";
 
 function Copyright() {
   return (
     <Typography variant="h7" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="/">
+      <Link color="inherit" style={{textDecoration:"none"}} href="/">
         Charles-Hugo Vialle
       </Link>{" "}
       {new Date().getFullYear()}
@@ -28,23 +28,27 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    width: 600,
-    height: "100vh",
+    justifyContent: "center",
+    width: "90%",
+    height: "10vh",
+    marginTop: 90,
+    margin: "auto"
   },
   contain: {
-    opacity: 0.5,
-    "&:hover": {
-      zIndex: 1,
-      opacity: 1,
-    },
+    // opacity: 0.5,
+    // "&:hover": {
+    //   zIndex: 0,
+    //   opacity: 1,
+    // },
   },
   paper: {
-    margin: theme.spacing(10, 20),
+    margin: theme.spacing(5, 10),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
   avatar: {
+    // zIndex: 0,
     margin: theme.spacing(1),
     backgroundColor: "rgba(237, 162, 116, 1)",
   },
@@ -54,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#5C9A9A",
+    backgroundColor: "primary",
     color: "white",
     fontFamily: "Open Sans Condensed, sans-serif",
     fontWeight: 400,
@@ -62,17 +66,20 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginTop: "5%",
-    color: "#006262",
+    color: "secondary",
     fontSize: "40px",
   },
   hr: {
     width: "50%",
     height: "3px",
-    backgroundColor: "#006262",
+    backgroundColor: "secondary",
     border: "none",
     marginTop: "5%",
     marginBottom: "10px",
   },
+  textfield : {
+    widht: 20
+  }
 }));
 
 export default function Login() {
@@ -87,20 +94,22 @@ export default function Login() {
       email: email,
       password: password,
     };
-    try {
-      const token = await axios.post(
-        `http://localhost:3030/users/login`,
-        userId
-      );
-      console.log(token.data);
-      const userProfile = await axios.get(
-        `http://localhost:3030/users/me`,
-        config
-      );
-      router.push("/");
-    } catch (error) {
-      ("identifiants incorrectes");
-    }
+    router.push("/");
+
+    // try {
+    //   const token = await axios.post(
+    //     `http://localhost:3030/users/login`,
+    //     userId
+    //   );
+    //   console.log(token.data);
+    //   const userProfile = await axios.get(
+    //     `http://localhost:3030/users/me`,
+    //     config
+    //   );
+    //   router.push("/");
+    // } catch (error) {
+    //   ("identifiants incorrectes");
+    // }
   };
 
   return (
@@ -108,7 +117,7 @@ export default function Login() {
       <Grid
         item
         component={Paper}
-        elevation={6}
+        elevation={10}
         square
         className={classes.contain}
       >
@@ -122,6 +131,7 @@ export default function Login() {
           <hr className={classes.hr}></hr>
           <form className={classes.form} noValidate>
             <TextField
+            className={classes.textfield}
               value={email}
               variant="outlined"
               margin="normal"
@@ -135,6 +145,7 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
+            className={classes.textfield}
               value={password}
               variant="outlined"
               margin="normal"
@@ -151,7 +162,7 @@ export default function Login() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              color="secondary"
               className={classes.submit}
               onClick={handleClick}
             >

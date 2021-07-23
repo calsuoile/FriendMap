@@ -78,7 +78,7 @@ const typography = {
     // Typo pour paragraphe et texte, lettre arrondie (taille moyenne)
   },
   button: {
-    color: palette.primary.light,
+    color: palette.secondary.light,
     fontSize: "14px",
     fontWeight: 900,
     lineHeight: 1.3,

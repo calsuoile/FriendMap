@@ -6,10 +6,11 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    width: 550,
+    width: "90%",
     // marginLeft: 20,
     // marginRight: 20,
     margin: "auto",
+    padding: 10
   },
   title: {
     fontSize: 14,
@@ -24,6 +25,7 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     textAlign: "center",
+    padding: 5,
   }
 });
 

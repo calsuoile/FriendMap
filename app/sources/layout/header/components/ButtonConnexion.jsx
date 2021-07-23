@@ -10,10 +10,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     fontSize: "13px",
     margin: 14,
-    // [theme.breakpoints.down("sm")]: {
-    //   width: "20px",
-    //   fontSize: "10px",
-    // },
     "&:hover": {
       backgroundColor: "secondary",
       color: "primary"
@@ -29,7 +25,7 @@ function ButtonConnexion(props) {
       <Link href="connection">
         <Button
           aria-label="connexion"
-          variant="contained"
+          variant="button"
           className={classes.buttonco}
         >
           Connection

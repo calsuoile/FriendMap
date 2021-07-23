@@ -11,7 +11,8 @@ const useStyles = makeStyles(() => ({
     position : "fixed",
     marginTop : "auto",
     width: "100%",
-    scrollbarColor: "black"
+    scrollBarColor: "black",
+    zIndex: 1
   },
   title: {
     marginLeft: 20,
