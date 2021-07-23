@@ -10,9 +10,14 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexDirection: "column",
     margin: "auto",
+    backgroundColor: "#63252c !important",
   },
   image : {
-    width: 600,
+    marginTop: 90,
+    marginBottom: 30,
+    width: 550,
+    marginLeft: 20,
+    marginRight: 20,
   },
 })
 

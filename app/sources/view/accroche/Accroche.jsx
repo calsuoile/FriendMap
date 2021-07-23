@@ -6,7 +6,10 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    width: 600,
+    width: 550,
+    // marginLeft: 20,
+    // marginRight: 20,
+    margin: "auto",
   },
   title: {
     fontSize: 14,
@@ -34,11 +37,14 @@ export default function Accroche() {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           World of the Day
         </Typography>
-        <Typography className={classes.accroche} variant="h5" component="h2">
+        <Typography className={classes.accroche} variant="h3" component="h3">
           Travel{bull}Around{bull}the{bull}World{bull}and{bull}find{bull}your{bull}Friends
         </Typography>
         <Typography className={classes.p} variant="body2" component="p">
-          Vous voyagez, visitez un pays, une ville, mais vous ne savez plus lequels de vos amis s'y trouvent. Recherchez, trouvez.
+          You traveling, visiting a country, a city, but you don't remember which friend is in.
+          <br />
+          <br />
+          Search & Find.
         </Typography>
       </CardContent>
     </Card>

@@ -7,13 +7,13 @@ const palette = {
   type: "light",
   primary: {
     light: "#B4B8D4", // bleu clair
-    main: "#006969", // new vert
+    main: "#ffffff", // new vert
     dark: "#B4B8D4", // bleu clair
     contrastText: "rgba(255, 255, 255, 1)", // blanc
   },
   secondary: {
     light: "#006969", //orange terra cota
-    main: "#006969", // orange
+    main: "#63252c", // bordeaux
     dark: "#006969", // jaune clair doux
     contrastText: "rgba(252, 248, 247, 1)", // blanc
   },

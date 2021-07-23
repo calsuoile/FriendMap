@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Input } from "@material-ui/core/";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  root : {
+    display: "flex",
+    justifyContent: "center"
+  },
+    title: {
+        color: "primary",
+    },
+}));
 
 function MyCity(props) {
   const classes = useStyles();
@@ -29,8 +37,8 @@ function MyCity(props) {
   };
 
   return (
-    <div>
-      <h3 className={classes.title}>My City:</h3>
+    <div className={classes.root}>
+      <h3 className={classes.title}>My City: {form.city}</h3>
       {!edition ? (
         <div className={classes.input}>
           <Input

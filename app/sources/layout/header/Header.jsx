@@ -2,17 +2,24 @@ import { makeStyles } from "@material-ui/core";
 import React from "react";
 import ButtonConnexion from "./components/ButtonConnexion";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
+    backgroundColor: "#63252c !important",
+    color: "white",
+    position : "fixed",
+    marginTop : "auto",
+    width: "100%",
+    scrollbarColor: "black"
   },
   title: {
-    margin: "10px",
+    marginLeft: 20,
+    marginTop: 8
   },
-  button: {
-    margin: "10px",
-  },
+  // button: {
+  //   margin: "10px",
+  // },
 }));
 
 function Header(props) {

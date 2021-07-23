@@ -4,14 +4,19 @@ import { Button, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   buttonco: {
-    backgroundColor: "#5C9A9A",
-    color: "white",
+    backgroundColor: "primary",
+    color: "secondary",
     fontFamily: "Open Sans Condensed, sans-serif",
     fontWeight: 400,
-    fontSize: "20px",
-    [theme.breakpoints.down("sm")]: {
-      width: "20px",
-      fontSize: "10px",
+    fontSize: "13px",
+    margin: 14,
+    // [theme.breakpoints.down("sm")]: {
+    //   width: "20px",
+    //   fontSize: "10px",
+    // },
+    "&:hover": {
+      backgroundColor: "secondary",
+      color: "primary"
     },
   },
 }));
@@ -21,11 +26,10 @@ function ButtonConnexion(props) {
 
   return (
     <div>
-      <Link href="connexion">
+      <Link href="connection">
         <Button
           aria-label="connexion"
           variant="contained"
-          color="secondary"
           className={classes.buttonco}
         >
           Connection

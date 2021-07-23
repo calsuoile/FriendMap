@@ -21,7 +21,7 @@ const typography = {
     // Sous titre fin et vert en majuscule.
   },
   h3: {
-    color: palette.primary.light,
+    color: palette.secondary.main,
     fontWeight: 400,
     fontSize: "32px",
     lineHeight: 1.25,
