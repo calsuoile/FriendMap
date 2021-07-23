@@ -1,9 +1,9 @@
 import palette from "./palette";
 import typography from "./typography";
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { createTheme, responsiveFontSizes } from "@material-ui/core";
 
 const theme = responsiveFontSizes(
-    createMuiTheme({
+    createTheme({
       palette: palette,
       typography : typography, 
     })
